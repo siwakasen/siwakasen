@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"encoding/json"
 	"net/http"
 
 	"github.com/siwakasen/siwakasen/utils/github"
@@ -21,40 +20,25 @@ var allowedEmojiTypes = map[string]bool{
 }
 
 func AddMoji(w http.ResponseWriter, req *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Add("Location", "https://github.com/siwakasen")
+	redirectURL := "https://github.com/siwakasen"
 
 	emojiType := req.URL.Query().Get("type")
 
 	if emojiType == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		json.NewEncoder(w).Encode(map[string]string{
-			"error": "type is required",
-		})
+		http.Redirect(w, req, redirectURL, http.StatusFound)
 		return
 	}
 
 	if !allowedEmojiTypes[emojiType] {
-		w.WriteHeader(http.StatusBadRequest)
-		json.NewEncoder(w).Encode(map[string]string{
-			"error": "emoji not allowed",
-		})
+		http.Redirect(w, req, redirectURL, http.StatusFound)
 		return
 	}
 
 	err := github.UpdateReadme(emojiType)
 	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(w).Encode(map[string]string{
-			"message": "😱",
-			"error":   err.Error(),
-		})
+		http.Redirect(w, req, redirectURL, http.StatusFound)
 		return
 	}
 
-	w.WriteHeader(http.StatusFound)
-	json.NewEncoder(w).Encode(map[string]string{
-		"message": emojiType,
-	})
-
+	http.Redirect(w, req, redirectURL, http.StatusFound)
 }
