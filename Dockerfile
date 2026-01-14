@@ -7,7 +7,7 @@ COPY go.mod ./
 COPY . .
 
 # Build the application
-RUN CGO_ENABLED=0 GOOS=linux go build -o siwakasen main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o siwakasen main.go
 
 FROM alpine:latest
 
