@@ -33,4 +33,4 @@ I passionate with everything about Linux and and managing infrastructure. I love
   </tr>
 </table>
 
-[Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
+![Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
