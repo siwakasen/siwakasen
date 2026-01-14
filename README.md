@@ -11,7 +11,7 @@ I also enjoy software engineering, building various projects to deliver digital 
 ### Drop some emojis to share your vibe! ⬇️
 
 <table>
-  <tr align="center" style="font-size:22px">
+  <tr align="center">
     <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">👊</a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">😎</a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">❤️</a></td>
@@ -25,15 +25,15 @@ I also enjoy software engineering, building various projects to deliver digital 
   </tr>
 
   <tr align="center">
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">0</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">👊 <span id="count-👊">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">😎 <span id="count-😎">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">❤️ <span id="count-❤️">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">👋 <span id="count-👋">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">👍 <span id="count-👍">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">😁 <span id="count-😁">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">😅 <span id="count-😅">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">😜 <span id="count-😜">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">🤩 <span id="count-🤩">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">🤯 <span id="count-🤯">0</span></a></td>
   </tr>
 </table>
