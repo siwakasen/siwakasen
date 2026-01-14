@@ -8,7 +8,7 @@ I also enjoy software engineering, building various projects to deliver digital 
 
 ![Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
 
-### Leave some emojis here!⬇️
+### Drop some emojis here! ⬇️
 
 <table>
   <tr align="center">
