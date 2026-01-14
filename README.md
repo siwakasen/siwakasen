@@ -12,41 +12,28 @@ I also enjoy software engineering, building various projects to deliver digital 
 
 <table>
   <tr align="center" style="font-size:22px">
-    <td><a href="http://localhost:8000/addmoji?type=👊">👊</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😎">😎</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=❤️">❤️</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👋">👋</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👍">👍</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😁">😁</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😅">😅</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😜">😜</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤩">🤩</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤯">🤯</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">👊</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">😎</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">❤️</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">👋</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">👍</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">😁</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">😅</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">😜</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">🤩</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">🤯</a></td>
   </tr>
 
   <tr align="center">
-    <td><a href="http://localhost:8000/addmoji?type=👊">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😎">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=❤️">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👋">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👍">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😁">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😅">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😜">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤩">0</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤯">0</a></td>
-  </tr>
-
-  <tr align="center" style="font-size:12px">
-    <td><a href="http://localhost:8000/addmoji?type=👊">Bro Fist</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😎">Cool</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=❤️">Love</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👋">Wave</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=👍">Thumbs Up</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😁">Smile</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😅">Relieved</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=😜">Playful</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤩">Starry Eyes</a></td>
-    <td><a href="http://localhost:8000/addmoji?type=🤯">Mind Blown</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">0</a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">0</a></td>
   </tr>
 </table>
