@@ -32,4 +32,5 @@ I passionate with everything about Linux and and managing infrastructure. I love
     <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯"><span id="count-🤯">1</span></a></td>
   </tr>
 </table>
-![Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
+
+[Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
