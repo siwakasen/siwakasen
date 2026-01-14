@@ -25,15 +25,15 @@ I also enjoy software engineering, building various projects to deliver digital 
   </tr>
 
   <tr align="center">
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">👊 <span id="count-👊">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">😎 <span id="count-😎">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">❤️ <span id="count-❤️">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">👋 <span id="count-👋">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">👍 <span id="count-👍">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">😁 <span id="count-😁">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">😅 <span id="count-😅">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">😜 <span id="count-😜">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">🤩 <span id="count-🤩">0</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">🤯 <span id="count-🤯">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊"><span id="count-👊">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎"><span id="count-😎">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️"><span id="count-❤️">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋"><span id="count-👋">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍"><span id="count-👍">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁"><span id="count-😁">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅"><span id="count-😅">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜"><span id="count-😜">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩"><span id="count-🤩">0</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯"><span id="count-🤯">0</span></a></td>
   </tr>
 </table>
