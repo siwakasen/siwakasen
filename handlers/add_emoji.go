@@ -22,6 +22,7 @@ var allowedEmojiTypes = map[string]bool{
 
 func AddMoji(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Add("Location", "https://github.com/siwakasen")
 
 	emojiType := req.URL.Query().Get("type")
 
@@ -51,7 +52,6 @@ func AddMoji(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	w.Header().Add("Location", "https://github.com/siwakasen")
 	w.WriteHeader(http.StatusFound)
 	json.NewEncoder(w).Encode(map[string]string{
 		"message": emojiType,
