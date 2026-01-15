@@ -21,7 +21,7 @@ I passionate with everything about Linux and and managing infrastructure. I love
   </tr>
 
   <tr align="center">
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊"><span id="count-👊">9</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊"><span id="count-👊">10</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=😎"><span id="count-😎">2</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️"><span id="count-❤️">3</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=👋"><span id="count-👋">3</span></a></td>
