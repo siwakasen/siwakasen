@@ -21,7 +21,7 @@ var ghToken = os.Getenv("GH_TOKEN")
 var baseHeaders = map[string]string{
 	"Accept":        "application/vnd.github.v3+json",
 	"Content-Type":  "application/json",
-	"User-Agent":    "jackyef-gh-readme",
+	"User-Agent":    "siwakasen-gh-readme",
 	"Authorization": "",
 }
 
