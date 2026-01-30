@@ -2,7 +2,7 @@
 
 I'm [Riksi](https://www.siwakasen.dev), a software engineer.
 
-I passionate with everything about Linux and and managing infrastructure. I love homelabbing and self-host many services to explore infrastructure hands-on. I also enjoy software engineering, building various projects to deliver digital solutions.
+I passionate with everything about Linux. I do homelabbing and self-host many services to explore infrastructure hands-on. I also enjoy software engineering, building various projects to deliver digital solutions.
 
 ### Drop some emojis here! ⬇️
 
