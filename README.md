@@ -27,7 +27,7 @@ I passionate with everything about Linux. I do homelabbing and self-host many se
     <td><a href="https://repo.siwakasen.dev/addmoji?type=👋"><span id="count-👋">7</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=👍"><span id="count-👍">12</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=😁"><span id="count-😁">4</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅"><span id="count-😅">7</span></a></td>
+    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅"><span id="count-😅">8</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=😜"><span id="count-😜">5</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩"><span id="count-🤩">5</span></a></td>
     <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯"><span id="count-🤯">14</span></a></td>
