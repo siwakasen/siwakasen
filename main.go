@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -12,5 +13,5 @@ func main() {
 	port := 80
 	http.HandleFunc("/addmoji", handlers.AddMoji)
 	fmt.Printf("Listen to port %v", port)
-	http.ListenAndServe(":"+strconv.Itoa(port), nil)
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(port), nil))
 }
