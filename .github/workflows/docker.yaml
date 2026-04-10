@@ -1,0 +1,60 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Prepare environment variables
+        id: vars
+        run: |
+          SHORT_SHA=$(echo "$GITHUB_SHA" | cut -c1-7)
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          {
+            echo "SHORT_SHA=$SHORT_SHA"
+            echo "COMMIT_MESSAGE<<EOF"
+            echo "$COMMIT_MESSAGE"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Check for skip keywords
+        id: skip-check
+        run: |
+          if echo "${COMMIT_MESSAGE}" | grep -qE "(skip:build|ci:skip)"; then
+            echo "skip=true" >> $GITHUB_ENV
+            echo "Skipping workflow because commit contains skip keyword."
+          else
+            echo "skip=false" >> $GITHUB_ENV
+          fi
+
+      - name: Log in to Registry
+        if: env.skip == 'false'
+        run: |
+          echo ${{ vars.REGISTRY_TOKEN }} | docker login \
+            -u ${{ vars.REGISTRY_USER }} \
+          --password-stdin ${{ vars.REGISTRY_URL }}
+
+      - name: Build and push image
+        if: |
+          env.skip == 'false'
+        run: |
+          IMAGE=${{ vars.REGISTRY_URL }}/${{ vars.IMAGE_NAME }}
+          docker build \
+            --build-arg NEXT_PUBLIC_URL=${{ vars.NEXT_PUBLIC_URL }} \
+            -f Dockerfile -t $IMAGE:latest -t $IMAGE:sha-${SHORT_SHA} .
+          docker push $IMAGE:latest
+          docker push $IMAGE:sha-${SHORT_SHA} 
+
+      - name: Logout from Registry
+        if: env.skip == 'false'
+        run: |
+          docker logout
+
+
