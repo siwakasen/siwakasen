@@ -34,5 +34,7 @@ I passionate with everything about Linux. I do homelabbing and self-host many se
   </tr>
 </table>
 
+[![GitHub Streak](https://streak-stats.demolab.com?user=siwakasen&theme=gruvbox-duo&card_height=25)](https://git.io/streak-stats)
+
 ![Profile Views](https://komarev.com/ghpvc/?username=siwakasen&color=blueviolet&style=flat-square)
 
