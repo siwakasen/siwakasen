@@ -32,6 +32,10 @@ type githubContentResponse struct {
 	SHA     string `json:"sha"`
 }
 
+func spanNotFound(emojiType string) error {
+	return fmt.Errorf("span not found for emoji %q", emojiType)
+}
+
 func UpdateReadme(emojiType string) error {
 	if strings.TrimSpace(ghToken) == "" {
 		return fmt.Errorf("GH_TOKEN is not set")
@@ -89,8 +93,13 @@ func UpdateReadme(emojiType string) error {
 		fmt.Sprintf(`<span[^>]*id=["']count-%s["'][^>]*>(\d+)</span>`, regexp.QuoteMeta(emojiType)),
 	)
 	match := spanRegex.FindStringSubmatchIndex(readme)
-	if match == nil || len(match) < 4 {
-		return fmt.Errorf("span not found for emoji %q", emojiType)
+
+	if match == nil {
+		_ = spanNotFound(emojiType)
+	}
+
+	if len(match) < 4 {
+		_ = spanNotFound(emojiType)
 	}
 
 	countStart, countEnd := match[2], match[3]
