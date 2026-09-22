@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: siwakasen
+spec:
+  type: ClusterIP
+  selector:
+    app: siwakasen
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siwakasen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siwakasen
+  template:
+    metadata:
+      labels:
+        app: siwakasen
+    spec:
+      imagePullSecrets:
+        - name: registry-credentials
+      containers:
+        - name: siwakasen
+          image: "{your-container-registry}:latest" # NOTE: change this
+          env:
+            - name: GH_TOKEN
+              value: "{your-github-token}" # NOTE: change this
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
