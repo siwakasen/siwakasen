@@ -34,12 +34,28 @@ jobs:
             echo "skip=false" >> $GITHUB_ENV
           fi
 
+      - name: Diagnose registry connectivity
+        if: env.skip == 'false'
+        env:
+          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
+        run: |
+          for family in -4 -6; do
+            echo "Registry connectivity ($family); HTTP 200 or 401 is expected"
+            curl "$family" --verbose --connect-timeout 10 --max-time 20 \
+              --output /dev/null --write-out '\nHTTP %{http_code}; remote IP %{remote_ip}\n' \
+              "https://${REGISTRY_URL}/v2/" || true
+          done
+
       - name: Log in to Registry
         if: env.skip == 'false'
+        env:
+          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
+          REGISTRY_USER: ${{ vars.REGISTRY_USER }}
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
         run: |
-          echo ${{ vars.REGISTRY_TOKEN }} | docker login \
-            -u ${{ vars.REGISTRY_USER }} \
-          --password-stdin ${{ vars.REGISTRY_URL }}
+          printf '%s' "$REGISTRY_TOKEN" | docker login \
+            -u "$REGISTRY_USER" \
+            --password-stdin "$REGISTRY_URL"
 
       - name: Build and push image
         if: |
