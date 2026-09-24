@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"regexp"
@@ -63,7 +64,11 @@ func UpdateReadme(emojiType string) error {
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			log.Printf("failed to close GET README body response: %v", err)
+		}
+	}()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -137,8 +142,11 @@ func UpdateReadme(emojiType string) error {
 	if err != nil {
 		return err
 	}
-	defer putResp.Body.Close()
-
+	defer func() {
+		if err := putResp.Body.Close(); err != nil {
+			log.Printf("failed to close body PUT README response: %v", err)
+		}
+	}()
 	if putResp.StatusCode >= 300 {
 		errBody, err := io.ReadAll(putResp.Body)
 		if err != nil {
