@@ -44,9 +44,19 @@ jobs:
           : "${REGISTRY_URL:?Set the REGISTRY_URL repository variable}"
           : "${REGISTRY_USER:?Set the REGISTRY_USER repository variable}"
           : "${REGISTRY_TOKEN:?Set the REGISTRY_TOKEN repository secret}"
-          echo "$REGISTRY_TOKEN" | docker login \
-            -u "$REGISTRY_USER" \
-            --password-stdin "$REGISTRY_URL"
+          for attempt in 1 2 3; do
+            if echo "$REGISTRY_TOKEN" | docker login \
+              -u "$REGISTRY_USER" \
+              --password-stdin "$REGISTRY_URL"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Docker registry login failed after 3 attempts."
+              exit 1
+            fi
+            echo "Docker registry login attempt $attempt failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Build and push image
         if: |
