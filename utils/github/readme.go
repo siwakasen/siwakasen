@@ -13,6 +13,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 )
 
 const (
@@ -33,28 +34,27 @@ type githubContentResponse struct {
 	SHA     string `json:"sha"`
 }
 
+var url = fmt.Sprintf(
+	"https://api.github.com/repos/%s/%s/contents/README.md",
+	ghRepoOwner,
+	ghRepoName,
+)
+var client = &http.Client{Timeout: 15 * time.Second}
+
 func spanNotFound(emojiType string) error {
 	return fmt.Errorf("span not found for emoji %q", emojiType)
 }
 
-func UpdateReadme(emojiType string) error {
+func GetReadme(emojiType string) ([]byte, error) {
 	if strings.TrimSpace(ghToken) == "" {
-		return fmt.Errorf("GH_TOKEN is not set")
+		return nil, fmt.Errorf("GH_TOKEN is not set")
 	}
 
-	url := fmt.Sprintf(
-		"https://api.github.com/repos/%s/%s/contents/README.md",
-		ghRepoOwner,
-		ghRepoName,
-	)
-
-	client := &http.Client{}
-
-	// GET README
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return err
+		return nil, err
 	}
+
 	for k, v := range baseHeaders {
 		req.Header.Set(k, v)
 	}
@@ -62,8 +62,9 @@ func UpdateReadme(emojiType string) error {
 
 	resp, err := client.Do(req)
 	if err != nil {
-		return err
+		return nil, err
 	}
+
 	defer func() {
 		if err := resp.Body.Close(); err != nil {
 			log.Printf("failed to close GET README body response: %v", err)
@@ -72,50 +73,31 @@ func UpdateReadme(emojiType string) error {
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	if resp.StatusCode >= 300 {
-		return fmt.Errorf("github GET README failed: %d: %s", resp.StatusCode, strings.TrimSpace(string(body)))
+		return nil, fmt.Errorf("github GET README failed: %d: %s", resp.StatusCode, strings.TrimSpace(string(body)))
 	}
 
 	var ghResp githubContentResponse
 	if err := json.Unmarshal(body, &ghResp); err != nil {
-		return err
+		return nil, err
 	}
 	if ghResp.Content == "" || ghResp.SHA == "" {
-		return fmt.Errorf("github response missing README content or sha")
+		return nil, fmt.Errorf("github response missing README content or sha")
 	}
 
 	decoded, err := base64.StdEncoding.DecodeString(
 		strings.ReplaceAll(ghResp.Content, "\n", ""),
 	)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	readme := string(decoded)
-
-	spanRegex := regexp.MustCompile(
-		fmt.Sprintf(`<span[^>]*id=["']count-%s["'][^>]*>(\d+)</span>`, regexp.QuoteMeta(emojiType)),
-	)
-	match := spanRegex.FindStringSubmatchIndex(readme)
-
-	if match == nil {
-		_ = spanNotFound(emojiType)
-	}
-
-	if len(match) < 4 {
-		_ = spanNotFound(emojiType)
-	}
-
-	countStart, countEnd := match[2], match[3]
-	prev, err := strconv.Atoi(readme[countStart:countEnd])
+	newReadme, err := incrementEmojiCount(readme, emojiType)
 	if err != nil {
-		return fmt.Errorf("invalid count value for emoji %q: %w", emojiType, err)
+		return nil, err
 	}
-
-	newReadme := readme[:countStart] +
-		fmt.Sprintf("%d", prev+1) +
-		readme[countEnd:]
 
 	encoded := base64.StdEncoding.EncodeToString([]byte(newReadme))
 
@@ -125,9 +107,34 @@ func UpdateReadme(emojiType string) error {
 		"sha":     ghResp.SHA,
 	})
 	if err != nil {
-		return err
+		return nil, err
 	}
 
+	return payload, nil
+}
+
+func incrementEmojiCount(readme, emojiType string) (string, error) {
+	spanRegex := regexp.MustCompile(
+		fmt.Sprintf(`<span[^>]*id=["']count-%s["'][^>]*>(\d+)</span>`, regexp.QuoteMeta(emojiType)),
+	)
+	match := spanRegex.FindStringSubmatchIndex(readme)
+
+	if len(match) < 4 {
+		return "", spanNotFound(emojiType)
+	}
+
+	countStart, countEnd := match[2], match[3]
+	prev, err := strconv.Atoi(readme[countStart:countEnd])
+	if err != nil {
+		return "", fmt.Errorf("invalid count value for emoji %q: %w", emojiType, err)
+	}
+
+	return readme[:countStart] +
+		fmt.Sprintf("%d", prev+1) +
+		readme[countEnd:], nil
+}
+
+func UpdateReadme(payload []byte) error {
 	// PUT README
 	putReq, err := http.NewRequest("PUT", url, bytes.NewBuffer(payload))
 	if err != nil {

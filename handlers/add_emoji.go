@@ -41,7 +41,14 @@ func AddMoji(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	err := github.UpdateReadme(emojiType)
+	payload, err := github.GetReadme(emojiType)
+	if err != nil {
+		log.Println(req, err)
+		http.Redirect(w, req, redirectURL, http.StatusFound)
+		return
+	}
+
+	err = github.UpdateReadme(payload)
 	if err != nil {
 		log.Println(req, err)
 		http.Redirect(w, req, redirectURL, http.StatusFound)
