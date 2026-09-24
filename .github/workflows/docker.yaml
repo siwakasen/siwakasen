@@ -34,18 +34,6 @@ jobs:
             echo "skip=false" >> $GITHUB_ENV
           fi
 
-      - name: Diagnose registry connectivity
-        if: env.skip == 'false'
-        env:
-          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
-        run: |
-          for family in -4 -6; do
-            echo "Registry connectivity ($family); HTTP 200 or 401 is expected"
-            curl "$family" --verbose --connect-timeout 10 --max-time 20 \
-              --output /dev/null --write-out '\nHTTP %{http_code}; remote IP %{remote_ip}\n' \
-              "https://${REGISTRY_URL}/v2/" || true
-          done
-
       - name: Log in to Registry
         if: env.skip == 'false'
         env:
@@ -56,7 +44,7 @@ jobs:
           : "${REGISTRY_URL:?Set the REGISTRY_URL repository variable}"
           : "${REGISTRY_USER:?Set the REGISTRY_USER repository variable}"
           : "${REGISTRY_TOKEN:?Set the REGISTRY_TOKEN repository secret}"
-          printf '%s' "$REGISTRY_TOKEN" | docker login \
+          echo "$REGISTRY_TOKEN" | docker login \
             -u "$REGISTRY_USER" \
             --password-stdin "$REGISTRY_URL"
 
