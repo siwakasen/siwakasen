@@ -10,8 +10,10 @@ import (
 )
 
 func main() {
+	mux := http.NewServeMux()
 	port := 80
-	http.HandleFunc("/addmoji", handlers.AddMoji)
 	fmt.Printf("Listen to port %v", port)
-	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(port), nil))
+
+	mux.HandleFunc("/addmoji", handlers.AddMoji)
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(port), mux))
 }
