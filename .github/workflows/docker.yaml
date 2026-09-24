@@ -53,6 +53,9 @@ jobs:
           REGISTRY_USER: ${{ vars.REGISTRY_USER }}
           REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
         run: |
+          : "${REGISTRY_URL:?Set the REGISTRY_URL repository variable}"
+          : "${REGISTRY_USER:?Set the REGISTRY_USER repository variable}"
+          : "${REGISTRY_TOKEN:?Set the REGISTRY_TOKEN repository secret}"
           printf '%s' "$REGISTRY_TOKEN" | docker login \
             -u "$REGISTRY_USER" \
             --password-stdin "$REGISTRY_URL"
