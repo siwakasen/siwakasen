@@ -60,7 +60,10 @@ func GetReadme(emojiType string) ([]byte, error) {
 	}
 	req.Header.Set("Authorization", "Bearer "+ghToken)
 
+	start := time.Now()
 	resp, err := client.Do(req)
+	duration := time.Since(start)
+	log.Printf("GET README response time: %.2fs", duration.Seconds())
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +148,11 @@ func UpdateReadme(payload []byte) error {
 	}
 	putReq.Header.Set("Authorization", "Bearer "+ghToken)
 
+	start := time.Now()
 	putResp, err := client.Do(putReq)
+	duration := time.Since(start)
+	log.Printf("PUT README response time: %.2fs", duration.Seconds())
+
 	if err != nil {
 		return err
 	}

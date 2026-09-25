@@ -4,6 +4,7 @@ package handlers
 import (
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/siwakasen/siwakasen/utils/github"
 )
@@ -22,6 +23,12 @@ var allowedEmojiTypes = map[string]bool{
 }
 
 func AddMoji(w http.ResponseWriter, req *http.Request) {
+	start := time.Now()
+	defer func() {
+		duration := time.Since(start)
+		log.Printf("%v | API Response Time: %.2fs", req, duration.Seconds())
+	}()
+
 	redirectURL := "https://github.com/siwakasen"
 
 	emojiType := req.URL.Query().Get("type")
