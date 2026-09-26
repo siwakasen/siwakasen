@@ -8,7 +8,7 @@ spec:
     app: siwakasen
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 8080
       protocol: TCP
 ---
 apiVersion: apps/v1
@@ -35,4 +35,4 @@ spec:
               value: "{your-github-token}" # NOTE: change this
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 8080
