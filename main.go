@@ -11,7 +11,7 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	port := 80
+	port := 8080
 	fmt.Printf("Listen to port %v", port)
 
 	mux.HandleFunc("/addmoji", handlers.AddMoji)
