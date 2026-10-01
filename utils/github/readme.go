@@ -46,10 +46,6 @@ func spanNotFound(emojiType string) error {
 }
 
 func GetReadme(emojiType string) ([]byte, error) {
-	if strings.TrimSpace(ghToken) == "" {
-		return nil, fmt.Errorf("GH_TOKEN is not set")
-	}
-
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return nil, err
