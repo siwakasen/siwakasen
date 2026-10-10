@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-I'm [Riksi](https://www.siwakasen.dev), a software engineer.
+I'm [Riksi](https://www.siwakasen.dev), Full-Stack & DevOps Engineer.
 
 I passionate with everything about Linux. I do homelabbing and self-host many services to explore infrastructure hands-on. I also enjoy building apps and developing various projects from backend to frontend to deliver digital solutions.
 
