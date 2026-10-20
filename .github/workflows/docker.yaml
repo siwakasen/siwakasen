@@ -4,6 +4,13 @@ on:
   push:
     branches: [master]
 
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+
 jobs:
   build-and-push:
     runs-on: ubuntu-24.04
@@ -33,41 +40,18 @@ jobs:
           else
             echo "skip=false" >> $GITHUB_ENV
           fi
-
-      - name: Log in to Registry
+      - uses: docker/login-action@v3
         if: env.skip == 'false'
-        env:
-          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
-          REGISTRY_USER: ${{ vars.REGISTRY_USER }}
-          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
-        run: |
-          : "${REGISTRY_URL:?Set the REGISTRY_URL repository variable}"
-          : "${REGISTRY_USER:?Set the REGISTRY_USER repository variable}"
-          : "${REGISTRY_TOKEN:?Set the REGISTRY_TOKEN repository secret}"
-          for attempt in 1 2 3; do
-            if echo "$REGISTRY_TOKEN" | docker login -u "$REGISTRY_USER" --password-stdin "$REGISTRY_URL"; then
-              break
-            fi
-            if [ "$attempt" -eq 3 ]; then
-              echo "Docker registry login failed after 3 attempts."
-              exit 1
-            fi
-            echo "Docker registry login attempt $attempt failed, retrying in 3s..."
-            sleep 3
-          done
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push image
-        if: |
-          env.skip == 'false'
-        run: |
-          IMAGE=${{ vars.REGISTRY_URL }}/${{ vars.IMAGE_NAME }}
-          docker build \
-            --build-arg NEXT_PUBLIC_URL=${{ vars.NEXT_PUBLIC_URL }} \
-            -f Dockerfile -t $IMAGE:latest -t $IMAGE:sha-${SHORT_SHA} .
-          docker push $IMAGE:latest
-          docker push $IMAGE:sha-${SHORT_SHA}
-
-      - name: Logout from Registry
+      - uses: docker/build-push-action@v6
         if: env.skip == 'false'
-        run: |
-          docker logout
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
