@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-I'm [Riksi](https://www.siwakasen.dev), Full-Stack & DevOps Engineer.
+I'm [Riksi](https://www.siwakasen.web.id), Full-Stack & DevOps Engineer.
 
 I passionate with everything about Linux. I do homelabbing and self-host many services to explore infrastructure hands-on. I also enjoy building apps and developing various projects from backend to frontend to deliver digital solutions.
 
@@ -8,29 +8,29 @@ I passionate with everything about Linux. I do homelabbing and self-host many se
 
 <table>
   <tr align="center">
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊">👊</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎">😎</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️">❤️</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋">👋</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍">👍</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁">😁</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅">😅</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜">😜</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩">🤩</a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯">🤯</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👊">👊</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😎">😎</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=❤️">❤️</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👋">👋</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👍">👍</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😁">😁</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😅">😅</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😜">😜</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=🤩">🤩</a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=🤯">🤯</a></td>
   </tr>
 
   <tr align="center">
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👊"><span id="count-👊">125</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😎"><span id="count-😎">47</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=❤️"><span id="count-❤️">47</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👋"><span id="count-👋">36</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=👍"><span id="count-👍">45</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😁"><span id="count-😁">42</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😅"><span id="count-😅">31</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=😜"><span id="count-😜">34</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤩"><span id="count-🤩">33</span></a></td>
-    <td><a href="https://repo.siwakasen.dev/addmoji?type=🤯"><span id="count-🤯">57</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👊"><span id="count-👊">125</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😎"><span id="count-😎">47</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=❤️"><span id="count-❤️">47</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👋"><span id="count-👋">36</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=👍"><span id="count-👍">45</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😁"><span id="count-😁">42</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😅"><span id="count-😅">31</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=😜"><span id="count-😜">34</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=🤩"><span id="count-🤩">33</span></a></td>
+    <td><a href="https://repo.siwakasen.web.id/addmoji?type=🤯"><span id="count-🤯">57</span></a></td>
   </tr>
 </table>
 
